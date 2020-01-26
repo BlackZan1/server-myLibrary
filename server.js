@@ -15,23 +15,18 @@ app.use(express.static('public'));
 app.use('/', indexRouter);
 
 async function startServer() {
-    try {
-        let db = mongoose.connection;
+    let db = mongoose.connection;
 
-        await mongoose.connect(process.env.DATABASE_URL, {
-            useNewUrlParser: true
-        })
+    await mongoose.connect(process.env.DATABASE_URL, {
+        useNewUrlParser: true
+    })
 
-        app.listen(process.env.PORT || 3036, () => {
-            console.log('Server is running...!')
-        });
+    app.listen(process.env.PORT || 3036, () => {
+        console.log('Server is running...!')
+    });
 
-        db.on('error', (err) => console.log(err));
-        db.once('open', () => console.log('Connected to DataBase'));
-    }
-    catch(e) {
-        console.log('Can not connected to server')
-    }
+    db.on('error', (err) => console.log(err));
+    db.once('open', () => console.log('Connected to DataBase'));
 }
 
 startServer();
