@@ -1,0 +1,33 @@
+<div>
+    <% if(author) { %>
+        <div>Author: <%= author.name %></div>
+
+        <div>
+            <a href="/authors/<%= author._id %>/edit">Edit</a>
+
+            <%- include('../partials/deleteForm', { url: `/authors/${author._id}` }) %> 
+        </div>
+
+        <br>
+        
+        <div>
+            <% books.forEach(book => { %>
+                <div>
+                    <p><%= book.title %></p>
+                    <img height="150" width="100" src="<%= book.coverImagePath %>" alt="Loading...">
+                </div>
+            <% }) %>
+
+            <% if(!books.length) { %>
+                <div>
+                    <h3>No books</h3>
+
+                    <a href="/books/new">Add book</a>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+    <% if(!author) { %>
+        <div>No author with this ID</div>
+    <% } %>
+</div>

@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 let indexRouter = require('./routes/index');
@@ -18,6 +19,7 @@ app.set('views', __dirname + '/views'); // расположение views ком
 app.set('layout', 'layouts/layout'); // расположение layout компонентов и сам файл layout
 
 // Layouts
+app.use(methodOverride('_method'));
 app.use(expressLayouts);
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));

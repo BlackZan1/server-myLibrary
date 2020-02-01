@@ -11,5 +11,15 @@
 </form>
 
 <% authors.forEach(author => { %>
-    <div><%= author.name %></div>
+    <div style="display: flex; align-items: center; justify-content: space-around; width: 300px;">
+        <h3><%= author.name %></h3>
+
+        <div><a href="/authors/<%= author._id %>">View</a></div>
+
+        <div>
+            <a href="/authors/<%= author._id %>/edit">Edit</a>
+        </div>
+
+        <%- include('../partials/deleteForm', { url: `/authors/${author._id}` }) %>
+    </div>
 <% }) %>

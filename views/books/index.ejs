@@ -25,10 +25,13 @@
 
     <div>
         <% books.forEach(book => { %>
-            <div>
-                <p><%= book.title %></p>
-                <img height="150" width="100" src="<%= book.coverImagePath %>" alt="Loading...">
-            </div>
+            <a href="/books/<%= book._id %>">
+                <div title="Click to read more">
+                    <p><%= book.title %></p>
+
+                    <img height="150" width="100" src="<%= book.coverImagePath %>" alt="Loading...">
+                </div>
+            </a>
         <% }) %>
     </div>
 </div>
