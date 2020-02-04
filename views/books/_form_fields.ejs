@@ -1,25 +1,39 @@
-<label>Title</label>
-<input type="text" name="title" value="<%= book.title %>">
+<div class="form">
+    <label>Title</label>
+    <input placeholder="Example: Moris..." class="input" type="text" name="title" value="<%= book.title %>">
+</div>
 
-<label>Author</label>
-<select name="author">
-    <% authors.forEach(author => { %>
-        <% if(author.id === book.id) { %>
-            <option selected label="<%= author.name %>" value="<%= author.id %>" >
-        <% } else { %>
-            <option label="<%= author.name %>" value="<%= author.id %>">
-        <% } %>
-    <% }) %>     
-</select>
+<div class="form">
+    <label>Author</label>
+    <select class="input" name="author">
+        <% authors.forEach(author => { %>
+            <% if(author._id == book.author) { %>
+                <option selected label="<%= author.name %>" value="<%= author._id %>" >
+            <% } else { %>
+                <option label="<%= author.name %>" value="<%= author._id %>">
+            <% } %>
+        <% }) %>     
+    </select>
+</div>
 
-<label>Publish date</label>
-<input type="date" name="publishDate" value="<%= book.publisDate == null ? '' : book.publisDate.toISOString().split('T')[0] %>">
+<div class="form">
+    <label>Publish date</label>
+    <input class="input" type="date" name="publishDate" value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+</div>
 
-<label>Page count</label>
-<input type="number" name="pageCount" min="3" value="<%= book.pageCount %>">
+<div class="form">
+    <label>Page count</label>
+    <input placeholder="3" class="input" type="number" name="pageCount" min="3" value="<%= book.pageCount %>">
+</div>
 
-<label>Cover</label>
-<input type="file" name="cover" class="filepond">
+<div class="form">
+    <label style="align-self: center; padding: 0px;">Cover</label>
+    <input type="file" name="cover" class="filepond file-input">
+</div>
 
-<label>Description</label>
-<textarea name="description" value="<%= book.description %>" cols="30" rows="10"></textarea>
+<div class="form">
+    <label style="align-self: center; margin: 0px; padding: 0px;">Description</label>
+    <textarea class="static-textarea" name="description" value="<%= book.description %>" cols="30" rows="10">
+        <%= book.description %>
+    </textarea>
+</div>

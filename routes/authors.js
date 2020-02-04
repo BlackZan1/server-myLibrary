@@ -101,15 +101,14 @@ router.put('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-    let author = await Author.findById(req.params.id);
+    const author = await Author.findById(req.params.id);
+    const books = await Book.find({ author: author._id});
 
     try {
-        const books = await Book.find({ author: author._id});
-
         if(author && books.length > 0) {
-            res.redirect(`/${req.params.id}`);
+            throw new Error('Error deleting Author')
         }
-        else {
+        else if(author && books.length == 0) {
             author.remove();
 
             res.redirect(`/authors`);
@@ -118,7 +117,8 @@ router.delete('/:id', async (req, res) => {
     catch(err) {
         res.render(`authors/view`, {
             author,
-            errorMessage: 'Error deleting Author'
+            books,
+            errorMessage: err
         }) 
     }
 })

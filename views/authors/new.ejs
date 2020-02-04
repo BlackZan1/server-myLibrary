@@ -1,12 +1,13 @@
-<div>
-    <h3>Add new author</h3>
+<div class="main">
+    <h3 class="title">Add new author</h3>
 
-    <form action="/authors" method='POST'>
+    <form class="form" action="/authors" method='POST'>
 
         <%- include('./_form_fields.ejs', { label: 'Enter name' }) %>
 
-        <a href="/authors">Go back</a>
+        <br>
 
-        <button type="submit">Create</button>
+        <a class="edit-btn" href="/authors">Go back</a>
+        <button class="btn" type="submit">Create</button>
     </form>
 </div>

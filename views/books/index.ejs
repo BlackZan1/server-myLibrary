@@ -1,35 +1,39 @@
-<div>
-    <h2>Search book</h2>
+<div class="main">
+    <h2 class="title">Search book</h2>
 
-    <form action="/books" method="GET">
-        <div><label>Title</label>
-            <input type="text" name="title" value="<%= searchedOptions.title %>">
+    <form class="books-form" action="/books" method="GET">
+        <div class="form">
+            <label>Title</label>
+            <input placeholder="Example: ABC..." class="input" type="text" name="title" value="<%= searchedOptions.title %>">
 
-            <button type="submit">Search</button>
+            <button class="btn" type="submit">Search</button>
         </div>
 
-        <div><label>Published After</label>
-            <input type="date" name="publishedAfter" value="<%= searchedOptions.publishedAfter %>">
 
-            <button type="submit">Search</button>
+        <div class="form">
+            <label>Published After</label>
+            <input class="input" type="date" name="publishedAfter" value="<%= searchedOptions.publishedAfter %>">
+
+            <button class="btn" type="submit">Search</button>
         </div>
 
-        <div><label>Published Before</label>
-            <input type="date" name="publishedBefore" value="<%= searchedOptions.publishedBefore %>">
+        <div class="form" >
+            <label>Published Before</label>
+            <input class="input" type="date" name="publishedBefore" value="<%= searchedOptions.publishedBefore %>">
 
-            <button type="submit">Search</button>
+            <button class="btn" type="submit">Search</button>
         </div>
     </form>
 
     <br>
 
-    <div>
+    <div class="books-wrapper">
         <% books.forEach(book => { %>
             <a href="/books/<%= book._id %>">
-                <div title="Click to read more">
+                <div class="books-item" title="Click to read more">
                     <p><%= book.title %></p>
 
-                    <img height="150" width="100" src="<%= book.coverImagePath %>" alt="Loading...">
+                    <img src="<%= book.coverImagePath %>" alt="Loading...">
                 </div>
             </a>
         <% }) %>

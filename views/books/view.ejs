@@ -2,11 +2,18 @@
     <div>
         <p>Title: <strong><%= book.title %></strong></p>
         <p>Author: <strong><%= author.name %></strong></p>
+        <p>Pages: <strong><%= book.pageCount %></strong></p>
+        <p>Publish date: <strong><%= book.date %></strong></p>
 
         <img width="100" height="150" src="<%= book.coverImagePath %>" alt="Loading...">
     </div>
     
     <div>
         <p><%= book.description %></p>
+    </div>
+
+    <div>
+        <a href="/books/<%= book._id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm.ejs', { url: `/books/${ book._id }` }) %>
     </div>
 </div>

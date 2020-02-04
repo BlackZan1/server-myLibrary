@@ -1,25 +1,39 @@
-<h2>Search author</h2>
+<div class="main">
+    <h2 class="title">Search author</h2>
 
-<form action="/authors" method='GET'>
-    <label for="name">Name</label>
+    <form class="form" action="/authors" method='GET'>
+        <label for="name">Name</label>
 
-    <input type="text" name="name" placeholder="Search" value="<%= searchedOptions.name %>">
+        <input class="input" type="text" name="name" placeholder="Search" value="<%= searchedOptions.name %>">
 
-    <button type="submit">
-        Search
-    </button>
-</form>
+        <button class="btn" type="submit">
+            Search
+        </button>
+    </form>
 
-<% authors.forEach(author => { %>
-    <div style="display: flex; align-items: center; justify-content: space-around; width: 300px;">
-        <h3><%= author.name %></h3>
+    <div class="search-wrapper main">
+        <% authors.forEach(author => { %>
+            <div class="search-item">
+                <h3><%= author.name %></h3>
 
-        <div><a href="/authors/<%= author._id %>">View</a></div>
+                <a href="/authors/<%= author._id %>">
+                    <div class="edit-btn">
+                        View
+                    </div>
+                </a>
 
-        <div>
-            <a href="/authors/<%= author._id %>/edit">Edit</a>
-        </div>
+                <a href="/authors/<%= author._id %>/edit">
+                    <div class="edit-btn">
+                        Edit
+                    </div>
+                </a>
 
-        <%- include('../partials/deleteForm', { url: `/authors/${author._id}` }) %>
+                <%- include('../partials/deleteForm', { url: `/authors/${author._id}` }) %>
+            </div>
+        <% }) %>
+
+        <% if(authors.length == 0) { %>
+            <h3>No authors</h3>
+        <% } %>
     </div>
-<% }) %>
+</div>

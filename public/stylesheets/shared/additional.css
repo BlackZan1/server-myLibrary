@@ -1,0 +1,98 @@
+.btn {
+    align-self: center;
+    padding: 0 40px;
+    height: 40px;
+    align-self: center;
+    background: #1E90FF;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn:hover {
+    background: #2278c9;
+}
+
+.input {
+    width: 85%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 7px #dcdcdc;
+    padding: 0 0 0 15px;
+}
+
+.close-btn {
+    background: #F08080;
+    align-self: center;
+    padding: 0 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    transition: all .4s ease;
+}
+
+.close-btn:hover {
+    background: #CD5C5C;
+}
+
+.edit-btn {
+    background: none;
+    align-self: center;
+    padding: 0 40px;
+    height: 40px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all .2s ease;
+}
+
+.edit-btn:hover {
+    border: 1px solid #000;
+}
+
+.edit-btn a {
+    width: 100%;
+    height: 40px;
+}
+
+.absolute-img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+    width: 50%;
+}
+
+.bottom-img {
+    width: 125%;
+    left: 75%;
+}
+
+.layer {
+    top: 25%;
+    left: 50%;
+}
+
+.static-textarea {
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 200px;
+    min-height: 200px;
+    align-self: center;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    border-radius: 10px;
+}

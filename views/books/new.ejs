@@ -1,8 +1,12 @@
-<div>
-    <form action="/books" method="POST">
+<div class="main">
+    <h1 class="title">New book</h1>
+
+    <form class="new-form" action="/books" method="POST">
         <%- include('./_form_fields.ejs') %>
 
-        <a href="/">Cancel</a>
-        <button>Create & post</button>
+        <div class="btns">
+            <a class="edit-btn" href="/">Cancel</a>
+            <button class="btn" type="submit">Create & post</button>
+        </div>
     </form>
 </div>

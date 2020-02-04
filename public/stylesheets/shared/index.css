@@ -1,0 +1,47 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 60px 0 50px 0;
+    font-family: 'Lobster', cursive;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 85%;
+    margin: 0 auto;
+    animation: fadeIn .5s ease;
+}
+
+.main-item {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0px 1px 12px #a9a9a9;
+    margin: 10px 30px;
+    transition: all .3s ease;
+}
+
+.main-item:hover {
+    transform: translate(0px, -20px);
+}
+
+.main-item p {
+    margin: 0 0 20px 0;
+    padding: 10px;
+}
+
+.main-item img {
+    height: 100%;
+    width: 100%;
+}

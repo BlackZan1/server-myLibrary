@@ -21,7 +21,7 @@ app.set('layout', 'layouts/layout'); // расположение layout комп
 // Layouts
 app.use(methodOverride('_method'));
 app.use(expressLayouts);
-app.use(express.static('public'));
+app.use('/static', express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
 // Routes

@@ -1,0 +1,29 @@
+.new-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 55%;
+}
+
+.btns .edit-btn {
+    margin: 0 40px 0 0;
+}
+
+.btns .btn {
+    margin: 0 0 0 40px;
+}
+
+.file-input {
+    width: 150px;
+    height: 200px;
+    align-self: center;
+}

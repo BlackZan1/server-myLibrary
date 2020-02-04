@@ -10,7 +10,10 @@
         <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
         <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
         <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-        <script defer src="../javascripts/fileUpload.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script defer src="/static/javascripts/fileUpload.js"></script>
+        <script defer src="/static/javascripts/parallaxEffect.js"></script>
+        <link href="/static/stylesheets/main.css" rel="stylesheet">
         <title>iBook</title>
     </head>
     <body>
@@ -18,5 +21,11 @@
         <%- include('../partials/errorMessage.ejs') %>
 
         <%- body %>
+
+        <div id="scene" class="parallax">
+            <img data-depth="0.6" src="https://cdn.pixabay.com/photo/2017/10/08/13/55/abstract-2829965_960_720.png" alt="Loading..." class="absolute-img layer">
+            
+            <img data-depth="0.2" src="https://serfob.s3.amazonaws.com/media/pink-yellow-blue-triangle-abstract-banner4e9-1975-4f04-8e91-0c2b322d64ee.png" alt="Loading..." class="bottom-img layer">
+        </div>
     </body>
 </html>
