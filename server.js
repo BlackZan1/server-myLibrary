@@ -29,15 +29,18 @@ app.use('/', indexRouter);
 app.use('/authors', authorsRouter);
 app.use('/books', booksRouter);
 
-let db = mongoose.connection;
+// let db = mongoose.connection;
 
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true, useUnifiedTopology: true
-});
+async function start() {
+    await mongoose.connect(process.env.DATABASE_URL, {
+        useNewUrlParser: true, useUnifiedTopology: true
+    });
 
-app.listen(process.env.PORT || 3036, () => {
-    console.log('Server is running');
-});
+    app.listen(process.env.PORT || 3036, () => {
+        console.log('Server is running');
+    });
+}
 
-db.on('error', (err) => console.log(err))
-db.on('open', () => console.log('Server is connected'))
+start();
+// db.on('error', (err) => console.log(err))
+// db.on('open', () => console.log('Server is connected'))
