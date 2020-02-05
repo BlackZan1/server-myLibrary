@@ -8,20 +8,4 @@ const authorSchema = new mongoose.Schema({
     }
 });
 
-// authorSchema.pre('remove', function(next) {
-//     Book.find({ author: this._id }, (err, books) => {
-//         console.log(books)
-
-//         if(err) {
-//             next(err);
-//         }
-//         else if(books.length) {
-//             next(new Error('This author has books!'));
-//         } 
-//         else {
-//             next();
-//         }
-//     })
-// })
-
 module.exports = mongoose.model('Author', authorSchema);
