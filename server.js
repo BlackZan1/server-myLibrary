@@ -33,7 +33,7 @@ app.use('/books', booksRouter);
 
 async function start() {
     await mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true, useUnifiedTopology: true
+        useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
     });
 
     app.listen(process.env.PORT || 3036, () => {

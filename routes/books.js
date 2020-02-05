@@ -157,12 +157,6 @@ function saveImageCover(book, coverEncoded = null) {
     }   
 }
 
-// function removeBookCover(fileName) {
-//     fs.unlink(path.join(uploadPath, fileName), err => {
-//         if(err) console.error(err);
-//     })
-// }
-
 async function renderPage(res, book, form, hasError = false) {
     try {
         const authors = await Author.find({});
